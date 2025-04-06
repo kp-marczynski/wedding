@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon"
+          href="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/external-wedding-ring-japanese-wedding-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png"
+          type="image/png"/>
+    <title>Magda & Krzysiek Wedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@400;600&display=swap"
+          rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+<!-- Hero Section -->
+<section
+        class="relative h-[50vh] md:h-screen bg-no-repeat bg-center md:bg-cover flex items-center justify-center text-center text-white"
+        style="background-image: url('/public/engagement.png'); background-position: center top; background-size: cover;">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4">Magda & Krzysiek</h1>
+        <h2 class="text-2xl mb-6">20.09.2025</h2>
+        <div id="countdown" class="text-2xl font-mono mb-4"></div>
+        <a href="https://calendar.google.com/calendar/u/0?cid=NWVkODEzODNhZjFiM2I3ZjUxZmMwZjBkNDNmYWNhNWUyOGMyODc3ZDQ0NGEyYzVkNDQ3MGQ0Yzc2ZWU1Yjc2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+           target="_blank" class="inline-block px-6 py-2 text-white bg-gray-800 hover:bg-gray-700 rounded shadow">Dodaj
+            do kalendarza</a>
+
+    </div>
+</section>
+
+<!-- Event Details & Reception in Cards -->
+<section class="py-16 px-6 bg-gray-50">
+    <h2 class="text-4xl font-semibold text-center mb-12">Szczegóły Wydarzenia</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <!-- Wedding Location Card -->
+        <div class="bg-white shadow-lg rounded-xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">Ceremonia Ślubna</h3>
+            <p class="text-center text-lg mb-2">20 września 2025 o godz. 15:00</p>
+            <p class="text-center text-xl font-bold">Urząd Stanu Cywilnego</p>
+            <p class="text-center font-semibold mb-4">Plac Ratuszowy 58, Jelenia Góra</p>
+            <div class="w-full h-64">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2496.5080981463555!2d15.735527!3d50.903274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470eb486f122ec8d%3A0xa4b8dd2a92d7c72d!2sPl.%20Ratuszowy%2058%2C%2058-500%20Jelenia%20G%C3%B3ra!5e0!3m2!1spl!2spl!4v1712394845513!5m2!1spl!2spl"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <!-- Reception Venue Card -->
+        <div class="bg-white shadow-lg rounded-xl p-6">
+            <h3 class="text-2xl font-semibold mb-4 text-center">Przyjęcie Weselne</h3>
+            <p class="text-center text-lg mb-2">Po ceremonii zapraszamy do sali:</p>
+            <p class="text-center text-xl font-bold">"Mazurkowa"</p>
+            <p class="text-center font-semibold mb-4">ul. Sudecka 72A, Jelenia Góra</p>
+            <div class="w-full h-64">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2496.170120323797!2d15.7444703!3d50.9070126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470eb1e6e42d0ffb%3A0x2c54fa55c1b2d2b4!2sSudecka%2072A%2C%2058-500%20Jelenia%20G%C3%B3ra!5e0!3m2!1spl!2spl!4v1712400000000!5m2!1spl!2spl"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RSVP Section -->
+<section class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <h2 class="text-4xl font-semibold mb-6">Potwierdzenie Obecności</h2>
+    <p class="mb-4 text-lg">Prosimy o potwierdzenie do <strong>20 czerwca 2025</strong>:</p>
+    <div id="rsvp-form" class="mt-10 text-left">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdp9rRRn1MMXoNM4lai8f1oSdcWkodc2en-53-CYFgnXYbCfg/formResponse"
+              method="POST" target="_blank" class="space-y-4 bg-gray-50 p-6 rounded-lg shadow">
+            <div>
+                <label class="block mb-1 font-medium">Imię i nazwisko <span class="text-red-500">*</span></label>
+                <input name="entry.559352220" type="text" required class="w-full border rounded px-3 py-2"/>
+            </div>
+            <div>
+                <label class="block mb-1 font-medium">Numer telefonu <span class="text-red-500">*</span></label>
+                <input name="entry.674252622" type="tel" pattern="[0-9]{9}" required
+                       class="w-full border rounded px-3 py-2"
+                       title="Wprowadź 9-cyfrowy numer telefonu bez spacji i znaków specjalnych"/>
+            </div>
+            <div>
+                <label class="block mb-1 font-medium">Adres e-mail <span class="text-red-500">*</span></label>
+                <input name="entry.386083410" type="email" required class="w-full border rounded px-3 py-2"/>
+            </div>
+            <div>
+                <label class="block mb-1 font-medium">Czy weźmiesz udział w ceremonii zaślubin? <span
+                        class="text-red-500">*</span></label>
+                <select name="entry.877086558" required class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
+            <div>
+                <label class="block mb-1 font-medium">Czy weźmiesz udział w przyjęciu weselnym? <span
+                        class="text-red-500">*</span></label>
+                <select id="attend-party" name="entry.800581200" required class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
+            <div id="diet" class="hidden">
+                <label class="block mb-1 font-medium">Czy masz jakieś alergie lub ograniczenia dietetyczne? <span
+                        class="text-red-500">*</span></label>
+                <select id="diet-answer" name="entry.1751303409" class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
+            <div id="diet-details" class="hidden">
+                <label class="block mb-1 font-medium">Jakie masz alergie lub ograniczenia dietetyczne? <span
+                        class="text-red-500">*</span></label>
+                <input name="entry.1252260858" type="text" class="w-full border rounded px-3 py-2"/>
+            </div>
+            <div id="alcohol" class="hidden">
+                <label class="block mb-1 font-medium">Preferowany alkohol</label>
+                <div class="flex flex-col space-y-2">
+                    <label><input type="checkbox" name="entry.810297218" value="Piwo" class="mr-2">Piwo</label>
+                    <label><input type="checkbox" name="entry.810297218" value="Wino" class="mr-2">Wino</label>
+                    <label><input type="checkbox" name="entry.810297218" value="Wódka" class="mr-2">Wódka</label>
+                    <label><input type="checkbox" name="entry.810297218" value="Piwo bezalkoholowe" class="mr-2">Piwo
+                        bezalkoholowe</label>
+                    <label><input type="checkbox" name="entry.810297218" value="Wino bezalkoholowe" class="mr-2">Wino
+                        bezalkoholowe</label>
+                </div>
+                <input type="hidden" name="entry.810297218" value="__other_option__"/>
+                <input type="text" name="entry.810297218.other_option_response" placeholder="Inne..."
+                       class="w-full mt-2 border rounded px-3 py-2"/>
+            </div>
+            <div id="plus-one" class="hidden">
+                <label class="block mb-1 font-medium">Czy przyjdziesz z osobą towarzyszącą? <span
+                        class="text-red-500">*</span></label>
+                <select id="plus-one-answer" name="entry.203420937" class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
+            <div id="plus-one-identity" class="hidden">
+                <label class="block mb-1 font-medium">Czy wiesz kto będzie Twoją osobą towarzyszącą? <span
+                        class="text-red-500">*</span></label>
+                <select id="plus-one-identity-answer" name="entry.1976599868" class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
+            <div id="plus-one-name" class="hidden">
+                <label class="block mb-1 font-medium">Imię i nazwisko osoby towarzyszącej <span
+                        class="text-red-500">*</span></label>
+                <input name="entry.924523986" type="text" class="w-full border rounded px-3 py-2"/>
+            </div>
+            <div id="partner-diet" class="hidden">
+                <label class="block mb-1 font-medium">Czy osoba towarzysząca ma alergie lub ograniczenia dietetyczne?
+                    <span class="text-red-500">*</span></label>
+                <select id="partner-diet-answer" name="entry.76592435" class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
+            <div id="partner-diet-details" class="hidden">
+                <label class="block mb-1 font-medium">Jakie osoba towarzysząca ma alergie lub ograniczenia dietetyczne?
+                    <span class="text-red-500">*</span></label>
+                <input name="entry.1901490918" type="text" class="w-full border rounded px-3 py-2"/>
+            </div>
+            <div id="partner-alcohol" class="hidden">
+                <label class="block mb-1 font-medium">Preferowany alkohol osoby towarzyszącej</label>
+                <div class="flex flex-col space-y-2">
+                    <label><input type="checkbox" name="entry.1013905706" value="Piwo" class="mr-2">Piwo</label>
+                    <label><input type="checkbox" name="entry.1013905706" value="Wino" class="mr-2">Wino</label>
+                    <label><input type="checkbox" name="entry.1013905706" value="Wódka" class="mr-2">Wódka</label>
+                    <label><input type="checkbox" name="entry.1013905706" value="Piwo bezalkoholowe" class="mr-2">Piwo
+                        bezalkoholowe</label>
+                    <label><input type="checkbox" name="entry.1013905706" value="Wino bezalkoholowe" class="mr-2">Wino
+                        bezalkoholowe</label>
+                </div>
+                <input type="hidden" name="entry.1013905706" value="__other_option__"/>
+                <input type="text" name="entry.1013905706.other_option_response" placeholder="Inne..."
+                       class="w-full mt-2 border rounded px-3 py-2"/>
+            </div>
+            <div>
+                <button type="submit" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-2 rounded">
+                    Wyślij
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center py-6">
+    <p class="text-lg">Z miłością – Magda & Krzysiek</p>
+</footer>
+<script>
+    function toggleField({triggerIds, expectedValue = "Tak", targetId, required = false}) {
+        const target = document.getElementById(targetId);
+        const inputs = triggerIds.map(id => document.getElementById(id));
+
+        function updateVisibility() {
+            const allMatch = inputs.every(input => input.value === expectedValue);
+            target.classList.toggle("hidden", !allMatch);
+            const input = target.querySelector("input, select, textarea");
+            if (input) input.required = required && allMatch;
+        }
+
+        inputs.forEach(input => input.addEventListener("change", updateVisibility));
+        updateVisibility();
+    }
+
+    toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "diet", required: true});
+    toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "alcohol"});
+    toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "plus-one", required: true});
+    toggleField({triggerIds: ["attend-party", "diet-answer"], expectedValue: "Tak", targetId: "diet-details", required: true});
+    toggleField({triggerIds: ["attend-party", "plus-one-answer"], expectedValue: "Tak", targetId: "plus-one-identity", required: true});
+    toggleField({triggerIds: ["attend-party", "plus-one-answer", "plus-one-identity-answer"], expectedValue: "Tak", targetId: "plus-one-name", required: true});
+    toggleField({triggerIds: ["attend-party", "plus-one-answer", "plus-one-identity-answer"], expectedValue: "Tak", targetId: "plus-one-name", required: true});
+    toggleField({triggerIds: ["attend-party", "plus-one-answer", "plus-one-identity-answer"], expectedValue: "Tak", targetId: "partner-diet", required: true});
+    toggleField({triggerIds: ["attend-party", "plus-one-answer", "plus-one-identity-answer"], expectedValue: "Tak", targetId: "partner-alcohol"});
+    toggleField({triggerIds: ["attend-party", "plus-one-answer", "plus-one-identity-answer", "partner-diet-answer"], expectedValue: "Tak", targetId: "partner-diet-details", required: true});
+</script>
+<script>
+    const countdown = document.getElementById("countdown");
+    const weddingDate = new Date("2025-09-20T15:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+            countdown.innerHTML = "Już po ślubie 🎉";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+</body>
+</html>
