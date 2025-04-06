@@ -156,6 +156,20 @@
                 <input type="text" name="entry.810297218.other_option_response" placeholder="Inne..."
                        class="w-full mt-2 border rounded px-3 py-2"/>
             </div>
+            <div id="hotel" class="hidden">
+                <label class="block mb-1 font-medium">Czy będziesz potrzebować noclegu? <span
+                        class="text-red-500">*</span></label>
+                <p class="text-sm text-gray-500 mt-1">
+                    Liczba pokoi jest ograniczona, dlatego prosimy o wcześniejszą informację.
+                    <br/>
+                    W razie wyczerpania miejsc niestety nie będziemy mogli zapewnić alternatywnego noclegu.
+                </p>
+                <select id="hotel-answer" name="entry.HOTEL" class="w-full border rounded px-3 py-2">
+                    <option value="">Wybierz...</option>
+                    <option value="Tak">Tak</option>
+                    <option value="Nie">Nie</option>
+                </select>
+            </div>
             <div id="plus-one" class="hidden">
                 <label class="block mb-1 font-medium">Czy przyjdziesz z osobą towarzyszącą? <span
                         class="text-red-500">*</span></label>
@@ -249,6 +263,7 @@
     toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "diet", required: true});
     toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "alcohol"});
     toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "plus-one", required: true});
+    toggleField({triggerIds: ["attend-party"], expectedValue: "Tak", targetId: "hotel", required: true});
     toggleField({triggerIds: ["attend-party", "diet-answer"], expectedValue: "Tak", targetId: "diet-details", required: true});
     toggleField({triggerIds: ["attend-party", "plus-one-answer"], expectedValue: "Tak", targetId: "plus-one-identity", required: true});
     toggleField({triggerIds: ["attend-party", "plus-one-answer", "plus-one-identity-answer"], expectedValue: "Tak", targetId: "plus-one-name", required: true});
