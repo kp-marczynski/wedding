@@ -91,7 +91,11 @@
                            class="w-full border border-gray-300 rounded px-4 py-2 text-lg tracking-widest uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                            title="Nieprawidłowy kod dostępu."/>
 
-<!--                    <p id="access-error" class="text-red-600 text-sm mt-2 hidden">Nieprawidłowy kod. Spróbuj ponownie.</p>-->
+                    <p id="access-error" class="text-red-600 text-sm mt-2 hidden">Nieprawidłowy kod. Spróbuj ponownie.</p>
+                    <button id="confirm-code" type="button"
+                            class="mt-4 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-4 py-2 rounded">
+                        Potwierdź kod
+                    </button>
                 </div>
             </div>
             <div id="rsvp-details" class="hidden space-y-4">
@@ -325,10 +329,11 @@
     }
 
     // Watch input for auto-validation
-    codeInput.addEventListener('input', () => {
+    document.getElementById('confirm-code').addEventListener('click', () => {
         const code = codeInput.value.trim();
         if (validateCode(code)) {
             unlockForm(code);
+            errorMsg.classList.add("hidden");
         } else {
             errorMsg.classList.remove("hidden");
             rsvpDetails.classList.add("hidden");
