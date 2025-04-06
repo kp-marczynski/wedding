@@ -81,15 +81,29 @@
     <p class="mb-4 text-lg">Prosimy o potwierdzenie do <strong>20 czerwca 2025</strong>:</p>
     <div id="rsvp-form" class="mt-10 text-left">
         <form id="rsvp" class="space-y-4 bg-gray-50 p-6 rounded-lg shadow">
+            <div id="access-code-wrapper" class="flex flex-col items-center justify-center py-16">
+                <div class="max-w-md w-full bg-white shadow-md rounded-lg p-6 border border-gray-200">
+                    <h2 class="text-2xl font-semibold text-center mb-4">W celu potwierdzenia udziału wprowadź kod dostępu</h2>
+
+                    <input id="access-code" name="entry.ACCESS_FIELD_ID" type="text" required
+                           pattern="^X[A-Za-z0-9]{5}$"
+                           placeholder="Kod dostępu"
+                           class="w-full border border-gray-300 rounded px-4 py-2 text-lg tracking-widest uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                           title="Nieprawidłowy kod dostępu."/>
+
+<!--                    <p id="access-error" class="text-red-600 text-sm mt-2 hidden">Nieprawidłowy kod. Spróbuj ponownie.</p>-->
+                </div>
+            </div>
+            <div id="rsvp-details" class="hidden space-y-4">
         <div>
                 <label class="block mb-1 font-medium">Imię i nazwisko <span class="text-red-500">*</span></label>
                 <input name="entry.559352220" type="text" required class="w-full border rounded px-3 py-2"/>
             </div>
             <div>
                 <label class="block mb-1 font-medium">Numer telefonu <span class="text-red-500">*</span></label>
-                <input name="entry.674252622" type="tel" pattern="^\+?[0-9\s\-]{9,15}$" required
+                <input name="entry.674252622" type="tel" pattern="^\+?[0-9\s\- ]{9,15}$" required
                        class="w-full border rounded px-3 py-2"
-                       title="Wprowadź 9-cyfrowy numer telefonu bez spacji i znaków specjalnych"/>
+                       title="Wprowadź poprawny numer telefonu"/>
             </div>
             <div>
                 <label class="block mb-1 font-medium">Adres e-mail <span class="text-red-500">*</span></label>
@@ -199,6 +213,7 @@
                     Wyślij
                 </button>
             </div>
+            </div>
         </form>
 
         <!-- Modal Popup -->
@@ -267,6 +282,43 @@
     updateCountdown();
 </script>
 <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const codeFromURL = urlParams.get('code');
+    const codeInput = document.getElementById('access-code');
+    const codeWrapper = document.getElementById('access-code-wrapper');
+    const rsvpDetails = document.getElementById('rsvp-details');
+    const errorMsg = document.getElementById('access-error');
+
+    function validateCode(code) {
+        return /^X[A-Z0-9]{5}$/.test(code);
+    }
+
+    function unlockForm(code) {
+        codeInput.value = code;
+        rsvpDetails.classList.remove("hidden");
+        codeWrapper.classList.add("hidden");
+    }
+
+    function showError() {
+        errorMsg.classList.remove("hidden");
+        rsvpDetails.classList.add("hidden");
+    }
+
+    // Auto-unlock if code is in URL
+    if (codeFromURL && validateCode(codeFromURL)) {
+        unlockForm(codeFromURL);
+    }
+
+    // Watch input for auto-validation
+    codeInput.addEventListener('input', () => {
+        const code = codeInput.value.trim();
+        if (validateCode(code)) {
+            unlockForm(code);
+        } else {
+            errorMsg.classList.remove("hidden");
+            rsvpDetails.classList.add("hidden");
+        }
+    });
     document.getElementById('rsvp').addEventListener('submit', function (e) {
         e.preventDefault();
 
