@@ -269,6 +269,16 @@
                 <input type="text" name="entry.1013905706.other_option_response" placeholder="Inne..."
                        class="w-full mt-2 border rounded px-3 py-2"/>
             </div>
+            <div class="flex items-start gap-2 text-sm text-gray-700">
+                <input type="checkbox" id="rodo-agreement" required
+                       class="mt-1 rounded border-gray-300 focus:ring-emerald-600"/>
+                <label for="rodo-agreement">
+                    Wyrażam zgodę na przetwarzanie moich danych osobowych w celu organizacji wydarzenia zgodnie z
+                    <button type="button" id="open-privacy" class="text-emerald-600 underline hover:text-emerald-500 ml-1">
+                        polityką prywatności
+                    </button>.<span class="text-red-500">*</span>
+                </label>
+            </div>
             <div class="flex justify-center">
                 <button type="submit" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-6 py-2 rounded w-full">
                     Wyślij
@@ -282,6 +292,22 @@
             <div class="bg-white rounded-xl shadow-lg p-6 max-w-sm w-full text-center">
                 <p id="confirmation-text" class="text-lg font-semibold">Dziękujemy za potwierdzenie!</p>
                 <button id="close-modal" class="mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-700">Zamknij</button>
+            </div>
+        </div>
+        <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl shadow-lg max-w-xl w-full p-6 relative">
+                <button id="close-privacy" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+                <h2 class="text-xl font-semibold mb-4">Polityka prywatności (RODO)</h2>
+                <div class="text-sm text-gray-700 space-y-2 max-h-[60vh] overflow-y-auto">
+                    <p>Administratorami danych osobowych są Magda i Krzysiek.</p>
+                    <p>Dane będą przetwarzane wyłącznie w celu organizacji wydarzenia (ślubu i wesela), kontaktu z gośćmi oraz przygotowania logistyki (np. noclegi, alergie).</p>
+                    <p>Dane są gromadzone za pośrednictwem formularza Google Forms i w związku z tym mogą być przetwarzane przez Google Ireland Limited jako podmiot przetwarzający dane zgodnie z ich polityką prywatności i warunkami przetwarzania danych.</p>
+                    <p>Podanie danych jest dobrowolne, ale niezbędne do udziału w wydarzeniu.</p>
+                    <p>Dane nie będą udostępniane osobom trzecim ani przekazywane poza EOG.</p>
+                    <p>Po wydarzeniu dane zostaną usunięte (do 90 dni).</p>
+                    <p>Masz prawo do dostępu, poprawiania, usuwania lub ograniczenia przetwarzania danych oraz wniesienia skargi do Prezesa UODO.</p>
+                    <p>Kontakt: <a href="mailto:kp.marczynski@gmail.com" class="text-emerald-600 underline">kp.marczynski@gmail.com</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -415,6 +441,26 @@
     calendarBtn.href = isMobile
         ? "https://calendar.google.com/calendar/ical/5ed81383af1b3b7f51fc0f0d43faca5e28c2877d444a2c5d4470d4c76ee5b767%40group.calendar.google.com/public/basic.ics"
         : "https://calendar.google.com/calendar/u/0?cid=NWVkODEzODNhZjFiM2I3ZjUxZmMwZjBkNDNmYWNhNWUyOGMyODc3ZDQ0NGEyYzVkNDQ3MGQ0Yzc2ZWU1Yjc2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t";
+</script>
+<script>
+    const openPrivacy = document.getElementById('open-privacy');
+    const closePrivacy = document.getElementById('close-privacy');
+    const privacyModal = document.getElementById('privacy-modal');
+
+    openPrivacy.addEventListener('click', () => {
+        privacyModal.classList.remove('hidden');
+    });
+
+    closePrivacy.addEventListener('click', () => {
+        privacyModal.classList.add('hidden');
+    });
+
+    // Optional: close modal on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === privacyModal) {
+            privacyModal.classList.add('hidden');
+        }
+    });
 </script>
 </body>
 </html>
