@@ -30,7 +30,8 @@
         <h1 class="text-5xl md:text-6xl font-bold mb-4">Magda & Krzysiek</h1>
         <h2 class="text-3xl md:text-4xl mb-4 font-mono">20.09.2025</h2>
 <!--        <div id="countdown" class="text-2xl mb-4"></div>-->
-        <a href="https://calendar.google.com/calendar/ical/5ed81383af1b3b7f51fc0f0d43faca5e28c2877d444a2c5d4470d4c76ee5b767%40group.calendar.google.com/public/basic.ics"
+        <a id="calendar-button"
+           href="https://calendar.google.com/calendar/ical/5ed81383af1b3b7f51fc0f0d43faca5e28c2877d444a2c5d4470d4c76ee5b767%40group.calendar.google.com/public/basic.ics"
            target="_blank" class="mb-4 inline-block px-6 py-2 text-white bg-emerald-600 hover:bg-emerald-500 rounded shadow">Dodaj
             do kalendarza</a>
     </div>
@@ -406,6 +407,14 @@
     document.getElementById('close-modal').addEventListener('click', function () {
         document.getElementById('confirmation-modal').classList.add('hidden');
     });
+</script>
+<script>
+    const calendarBtn = document.getElementById("calendar-button");
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    calendarBtn.href = isMobile
+        ? "https://calendar.google.com/calendar/ical/5ed81383af1b3b7f51fc0f0d43faca5e28c2877d444a2c5d4470d4c76ee5b767%40group.calendar.google.com/public/basic.ics"
+        : "https://calendar.google.com/calendar/u/0?cid=NWVkODEzODNhZjFiM2I3ZjUxZmMwZjBkNDNmYWNhNWUyOGMyODc3ZDQ0NGEyYzVkNDQ3MGQ0Yzc2ZWU1Yjc2N0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t";
 </script>
 </body>
 </html>
